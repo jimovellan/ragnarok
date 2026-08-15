@@ -1,0 +1,47 @@
+{
+  "name": "ragnarok",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "ragnarok": "./dist/index.js"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "start": "ts-node src/index.ts",
+    "dev": "npm run build && node dist/index.js",
+    "migrate": "node scripts/migrate.mjs",
+    "migrate:up": "node scripts/migrate.mjs up",
+    "migrate:down": "node scripts/migrate.mjs down",
+    "migrate:create": "node scripts/migrate.mjs create -j sql",
+    "seed": "npm run build && node scripts/seed.mjs",
+    "reembed": "npm run build && node scripts/reembed.mjs",
+    "eval:search": "npm run build && node scripts/eval-search.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.0.0",
+    "@types/pg": "^8.20.0",
+    "node-pg-migrate": "^9.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "@huggingface/transformers": "^4.2.0",
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "@scalar/express-api-reference": "^0.10.12",
+    "commander": "^15.0.0",
+    "express": "^5.2.1",
+    "pg": "^8.22.0",
+    "pip": "^0.0.1",
+    "zod": "^4.4.3"
+  }
+}

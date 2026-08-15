@@ -1,0 +1,1 @@
+{"version":3,"file":"search-docs.query.js","sourceRoot":"","sources":["../../../../src/application/docs/queries/search-docs.query.ts"],"names":[],"mappings":"AAGA,MAAM,OAAO,eAAe;IACG;IAA7B,YAA6B,UAAyB;QAAzB,eAAU,GAAV,UAAU,CAAe;IAAG,CAAC;IAE1D,OAAO,CAAC,KAAa,EAAE,KAAc,EAAE,GAAY;QACjD,OAAO,IAAI,CAAC,UAAU,CAAC,MAAM,CAAC,KAAK,EAAE,KAAK,EAAE,GAAG,CAAC,CAAC;IACnD,CAAC;CACF"}

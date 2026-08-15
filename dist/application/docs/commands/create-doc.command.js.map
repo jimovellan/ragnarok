@@ -1,0 +1,1 @@
+{"version":3,"file":"create-doc.command.js","sourceRoot":"","sources":["../../../../src/application/docs/commands/create-doc.command.ts"],"names":[],"mappings":"AAGA,MAAM,OAAO,gBAAgB;IACE;IAA7B,YAA6B,UAAyB;QAAzB,eAAU,GAAV,UAAU,CAAe;IAAG,CAAC;IAE1D,OAAO,CAAC,GAAsC;QAC5C,OAAO,IAAI,CAAC,UAAU,CAAC,MAAM,CAAC,GAAG,CAAC,CAAC;IACrC,CAAC;CACF"}

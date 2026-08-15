@@ -1,0 +1,72 @@
+{
+  "communities": {
+    "0": [
+      "commands_mcp",
+      "commands_mcp_registermcpcommand",
+      "common_common_utils",
+      "common_common_utils_getversion",
+      "src_container",
+      "src_container_container",
+      "src_index",
+      "src_index_program"
+    ],
+    "1": [
+      "entities_knowledge_entity",
+      "entities_knowledge_entity_knowledge",
+      "repositories_knowledge_repository",
+      "repositories_sqlite_knowledge_repository",
+      "repositories_sqlite_knowledge_repository_sqliteknowledgerepository_create",
+      "repositories_sqlite_knowledge_repository_sqliteknowledgerepository_search"
+    ],
+    "2": [
+      "services_embbeding_service",
+      "services_embbeding_service_embedingservice"
+    ],
+    "3": [
+      "embedings_local_embeding_services"
+    ]
+  },
+  "cohesion": {
+    "0": 0.35714285714285715,
+    "1": 0.6666666666666666,
+    "2": 1.0,
+    "3": 1.0
+  },
+  "gods": [
+    {
+      "id": "entities_knowledge_entity_knowledge",
+      "label": "Knowledge",
+      "degree": 5
+    },
+    {
+      "id": "commands_mcp_registermcpcommand",
+      "label": "registerMcpCommand()",
+      "degree": 2
+    },
+    {
+      "id": "common_common_utils_getversion",
+      "label": "getVersion()",
+      "degree": 2
+    },
+    {
+      "id": "src_container_container",
+      "label": "container",
+      "degree": 2
+    },
+    {
+      "id": "services_embbeding_service_embedingservice",
+      "label": "EmbedingService",
+      "degree": 1
+    },
+    {
+      "id": "src_index_program",
+      "label": "program",
+      "degree": 1
+    }
+  ],
+  "surprises": [],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}

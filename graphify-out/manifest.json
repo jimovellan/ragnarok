@@ -1,0 +1,172 @@
+{
+  "src/common/common.utils.ts": {
+    "mtime": 1785517307.3083258,
+    "ast_hash": "a10b4c3e82a9cab5b8fadc91ad563aee",
+    "semantic_hash": ""
+  },
+  "src/container.ts": {
+    "mtime": 1785522428.4923027,
+    "ast_hash": "85145c88da9fc5eb8947ddbda0af8cfc",
+    "semantic_hash": ""
+  },
+  "src/domain/entities/knowledge.entity.ts": {
+    "mtime": 1785569875.122491,
+    "ast_hash": "673d9942844f7ace63a9110461e80876",
+    "semantic_hash": ""
+  },
+  "src/domain/repositories/knowledge.repository.ts": {
+    "mtime": 1785570012.344192,
+    "ast_hash": "ca67377d69fbb4db0fda5bc5f5343463",
+    "semantic_hash": ""
+  },
+  "src/domain/services/embbeding.service.ts": {
+    "mtime": 1782235727.7577345,
+    "ast_hash": "dd7b64f8f608184e706974d12e5d7902",
+    "semantic_hash": "dd7b64f8f608184e706974d12e5d7902"
+  },
+  "src/index.ts": {
+    "mtime": 1785572136.1438239,
+    "ast_hash": "277cbe88224dfe096a2bf4566ef3e828",
+    "semantic_hash": ""
+  },
+  "src/infrastructure/services/embedings/local.embeding.services.ts": {
+    "mtime": 1785515257.7451227,
+    "ast_hash": "a188d6815731e9cc1e8d1c393ffca781",
+    "semantic_hash": ""
+  },
+  "src/commands/index.ts": {
+    "mtime": 1785572128.1743138,
+    "ast_hash": "91a5f228cac4a3aecae1074e77d700f9",
+    "semantic_hash": ""
+  },
+  "src/commands/mcp.command.ts": {
+    "mtime": 1785571026.4226103,
+    "ast_hash": "598ff1d5b599e8ea09ab60fe25d9f934",
+    "semantic_hash": ""
+  },
+  "src/commands/ui.command.ts": {
+    "mtime": 1785570638.1469007,
+    "ast_hash": "64f79524ed9042b08dcd097a040884c0",
+    "semantic_hash": ""
+  },
+  "src/config.ts": {
+    "mtime": 1785522285.6613667,
+    "ast_hash": "8612c1a49c4de34ca091c25e6454cc8f",
+    "semantic_hash": ""
+  },
+  "src/infrastructure/repositories/postgres.knowledge.repository.ts": {
+    "mtime": 1785570024.36271,
+    "ast_hash": "ff4c052576b4359143b0058e8bad0489",
+    "semantic_hash": ""
+  },
+  "docker-compose.yml": {
+    "mtime": 1785516190.948921,
+    "ast_hash": "e59b74b2c28ebea5441ec61d88e51c6f",
+    "semantic_hash": ""
+  },
+  "migrations/1785516128000_init-pgvector.sql": {
+    "mtime": 1785570205.62994,
+    "ast_hash": "82f005d7d358b7840505c4d71467759d",
+    "semantic_hash": ""
+  },
+  "scripts/migrate.mjs": {
+    "mtime": 1785517288.2280345,
+    "ast_hash": "0fa41241307ed3e7b33b8a1a4ea9d7fd",
+    "semantic_hash": ""
+  },
+  "src/env.ts": {
+    "mtime": 1785517278.6482654,
+    "ast_hash": "5dd875cd04bf797dffbfc22eaa7787c5",
+    "semantic_hash": ""
+  },
+  "src/application/knowledge/commands/create-knowledge.command.ts": {
+    "mtime": 1785516908.2267578,
+    "ast_hash": "d7e957053f5f5f26d2ee3d1a401671d4",
+    "semantic_hash": ""
+  },
+  "src/application/knowledge/commands/update-knowledge.command.ts": {
+    "mtime": 1785516912.055194,
+    "ast_hash": "f729f558d0d20238c5989c0cd74824ea",
+    "semantic_hash": ""
+  },
+  "src/application/knowledge/queries/get-knowledge-by-id.query.ts": {
+    "mtime": 1785516920.178952,
+    "ast_hash": "bd806a64c9f139b4cd63869c3c49eee7",
+    "semantic_hash": ""
+  },
+  "src/application/knowledge/queries/get-knowledge-by-key.query.ts": {
+    "mtime": 1785516924.357347,
+    "ast_hash": "cebabc981a0dbd94fe495ca379c829a9",
+    "semantic_hash": ""
+  },
+  "src/application/knowledge/queries/search-knowledge.query.ts": {
+    "mtime": 1785569886.4622195,
+    "ast_hash": "08f02d2fc8a43f97fd7e83729ad0b870",
+    "semantic_hash": ""
+  },
+  "src/infrastructure/console/prompt.ts": {
+    "mtime": 1785516700.8336952,
+    "ast_hash": "c6cb74ab606ff47fd24d00a4dca99100",
+    "semantic_hash": ""
+  },
+  "src/infrastructure/migrations/run-migrations.ts": {
+    "mtime": 1785522371.5706155,
+    "ast_hash": "6b1079dda573edeae8c12f87c8cd2763",
+    "semantic_hash": ""
+  },
+  "scripts/seed.mjs": {
+    "mtime": 1785570177.0468569,
+    "ast_hash": "1c47fbb91d1e3435cffbba1959295a86",
+    "semantic_hash": ""
+  },
+  "src/infrastructure/services/embedings/local-transformers.embedding.service.ts": {
+    "mtime": 1785520828.9878213,
+    "ast_hash": "a67d81ec291e5cf6bcc396eec794756e",
+    "semantic_hash": ""
+  },
+  "scripts/reembed.mjs": {
+    "mtime": 1785521031.587073,
+    "ast_hash": "87fb4f3363af47b8e1573589f24b64a8",
+    "semantic_hash": ""
+  },
+  "migrations-sqlite/001_init.sql": {
+    "mtime": 1785570212.3347702,
+    "ast_hash": "be3611965f945cca7ecb1bb43d738b51",
+    "semantic_hash": ""
+  },
+  "src/infrastructure/migrations/run-sqlite-migrations.ts": {
+    "mtime": 1785522365.517872,
+    "ast_hash": "fa8dad9b9478ce367df7655463ae6b9c",
+    "semantic_hash": ""
+  },
+  "src/infrastructure/repositories/knowledge-search.utils.ts": {
+    "mtime": 1785525085.2207208,
+    "ast_hash": "4365c14f22b3fc3a5b2281abce096df6",
+    "semantic_hash": ""
+  },
+  "src/infrastructure/repositories/sqlite.connection.ts": {
+    "mtime": 1785522355.5354981,
+    "ast_hash": "b912c6006f33e92ece03dc60285bb993",
+    "semantic_hash": ""
+  },
+  "src/infrastructure/repositories/sqlite.knowledge.repository.ts": {
+    "mtime": 1785570018.5136416,
+    "ast_hash": "c69a826b9b9cab33d19cfd959096d3ed",
+    "semantic_hash": ""
+  },
+  "scripts/eval-search.mjs": {
+    "mtime": 1785525331.1089706,
+    "ast_hash": "f91a3bba7a1436a9747b2fe0fb2eda76",
+    "semantic_hash": ""
+  },
+  "src/commands/http.command.ts": {
+    "mtime": 1785572117.834314,
+    "ast_hash": "77f9d0d7b22fb1d8c6d923fcfc9948fe",
+    "semantic_hash": ""
+  },
+  "src/infrastructure/http/openapi.spec.ts": {
+    "mtime": 1785572100.7364573,
+    "ast_hash": "02c8d72df9e125d04b321ce25aafaca6",
+    "semantic_hash": ""
+  }
+}
