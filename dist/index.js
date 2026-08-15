@@ -2,7 +2,7 @@
 import './env.js';
 import { Command } from 'commander';
 import { getVersion } from './common/common.utils.js';
-import { registerHttpCommand, registerMcpCommand, registerUiCommand } from './commands/index.js';
+import { registerHttpCommand, registerMcpCommand, registerUiCommand, registerSetupCommand } from './commands/index.js';
 import { container } from './container.js';
 const program = new Command();
 /// inicio de la configuracion del programa de Cli
@@ -12,6 +12,7 @@ program
     .version(await getVersion())
     .description('A CLI tool for managing knowledge base');
 //registrar comandos
+registerSetupCommand(program);
 registerUiCommand(program, container.knowledgeRepository, container.docRepository, container.docChunkRepository);
 registerMcpCommand(program, container.knowledgeRepository, container.docRepository, container.docChunkRepository);
 registerHttpCommand(program, container.knowledgeRepository, container.docRepository, container.docChunkRepository);

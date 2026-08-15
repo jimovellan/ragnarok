@@ -1,10 +1,11 @@
-import { fileURLToPath } from "node:url";
+import os from "node:os";
 import path from "node:path";
 
-const ENV_PATH = path.join(path.dirname(fileURLToPath(import.meta.url)), "../.env");
+export const CONFIG_DIR = path.join(process.env["XDG_CONFIG_HOME"] ?? path.join(os.homedir(), ".config"), "ragnarok");
+export const CONFIG_PATH = path.join(CONFIG_DIR, "config");
 
 try {
-    process.loadEnvFile(ENV_PATH);
+    process.loadEnvFile(CONFIG_PATH);
 } catch {
-    // no .env file present, rely on already-set environment variables
+    // no config file present yet, rely on already-set environment variables
 }

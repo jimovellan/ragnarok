@@ -30,6 +30,7 @@ export function registerMcpCommand(
             const server = new McpServer({
                 name: 'ragnarok',
                 version: '1.0.0',
+                description: 'A personal knowledge base and document manager with semantic search capabilities.',
             });
 
             server.registerTool(
