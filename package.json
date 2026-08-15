@@ -1,6 +1,6 @@
 {
   "name": "@jimovellan/ragnarok",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "type": "module",
@@ -37,7 +37,6 @@
     "@types/express": "^5.0.6",
     "@types/node": "^26.0.0",
     "@types/pg": "^8.20.0",
-    "node-pg-migrate": "^9.0.0",
     "ts-node": "^10.9.2",
     "typescript": "^6.0.3"
   },
@@ -47,6 +46,7 @@
     "@scalar/express-api-reference": "^0.10.12",
     "commander": "^15.0.0",
     "express": "^5.2.1",
+    "node-pg-migrate": "^9.0.0",
     "pg": "^8.22.0",
     "pip": "^0.0.1",
     "zod": "^4.4.3"

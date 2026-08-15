@@ -19,6 +19,7 @@ export function registerMcpCommand(program, repository, docRepository, docChunkR
         const server = new McpServer({
             name: 'ragnarok',
             version: '1.0.0',
+            description: 'A personal knowledge base and document manager with semantic search capabilities.',
         });
         server.registerTool('about', {
             description: 'Explains what this MCP server is and how to use its tools together. Call this first if you are unsure what this server does.',
