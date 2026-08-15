@@ -3,7 +3,7 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/logo-negro.jpeg">
   <source media="(prefers-color-scheme: light)" srcset="assets/logo-blanco.jpeg">
-  <img alt="ragnarok logo" src="assets/logo-blanco.jpeg" width="200">
+  <img alt="ragnarok logo" src="assets/logo-blanco.jpeg" width="100%">
 </picture>
 
 # ragnarok
