@@ -1,1 +1,0 @@
-{"version":3,"file":"get-doc-by-id.query.js","sourceRoot":"","sources":["../../../../src/application/docs/queries/get-doc-by-id.query.ts"],"names":[],"mappings":"AAGA,MAAM,OAAO,eAAe;IACG;IAA7B,YAA6B,UAAyB;QAAzB,eAAU,GAAV,UAAU,CAAe;IAAG,CAAC;IAE1D,OAAO,CAAC,EAAU;QAChB,OAAO,IAAI,CAAC,UAAU,CAAC,OAAO,CAAC,EAAE,CAAC,CAAC;IACrC,CAAC;CACF"}

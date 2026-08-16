@@ -1,1 +1,0 @@
-{"version":3,"file":"get-knowledge-by-id.query.js","sourceRoot":"","sources":["../../../../src/application/knowledge/queries/get-knowledge-by-id.query.ts"],"names":[],"mappings":"AAGA,MAAM,OAAO,qBAAqB;IACH;IAA7B,YAA6B,UAA+B;QAA/B,eAAU,GAAV,UAAU,CAAqB;IAAG,CAAC;IAEhE,OAAO,CAAC,EAAU;QAChB,OAAO,IAAI,CAAC,UAAU,CAAC,OAAO,CAAC,EAAE,CAAC,CAAC;IACrC,CAAC;CACF"}
