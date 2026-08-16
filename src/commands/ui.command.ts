@@ -15,6 +15,7 @@ import { SearchDocsQuery } from "../application/docs/queries/search-docs.query.j
 import { SearchDocChunksQuery } from "../application/doc-chunks/queries/search-doc-chunks.query.js";
 import { BACK, selectPrompt, textPrompt, viewScreen } from "../infrastructure/console/prompt.js";
 import { runMigrations } from "../infrastructure/migrations/run-migrations.js";
+import { notifyIfUpdateAvailable } from "../infrastructure/update/check-update.js";
 
 interface FormField {
   key: "title" | "tag" | "summary" | "content" | "reference";
@@ -387,6 +388,8 @@ export function registerUiCommand(
     .description("Start the interactive console UI")
     .argument("[name]", "Namespace", "")
     .action(async (name: string) => {
+      notifyIfUpdateAvailable();
+
       await runMigrations();
 
       const createCommand = new CreateKnowledgeCommand(repository);

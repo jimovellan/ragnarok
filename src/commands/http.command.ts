@@ -6,6 +6,7 @@ import type { DocChanges, DocRepository } from '../domain/repositories/doc.repos
 import type { DocChunkRepository } from '../domain/repositories/doc-chunk.repository.js';
 import { runMigrations } from '../infrastructure/migrations/run-migrations.js';
 import { buildOpenApiSpec } from '../infrastructure/http/openapi.spec.js';
+import { notifyIfUpdateAvailable } from '../infrastructure/update/check-update.js';
 
 const DEFAULT_PORT = 5555;
 
@@ -28,6 +29,8 @@ export function registerHttpCommand(
         .description('Start the REST API server (with Scalar API reference at /reference)')
         .option('-p, --port <port>', 'Port to listen on', String(DEFAULT_PORT))
         .action(async (options: { port: string }) => {
+            notifyIfUpdateAvailable();
+
             const port = Number(options.port);
             if (!Number.isInteger(port) || port <= 0) {
                 console.error(`Invalid port: ${options.port}`);

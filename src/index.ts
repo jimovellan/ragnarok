@@ -3,7 +3,7 @@ import './env.js';
 import {Command} from 'commander';
 import { getVersion } from './common/common.utils.js';
 import { getLogo } from './common/logo.js';
-import { registerHttpCommand,registerMcpCommand,registerUiCommand,registerSetupCommand } from './commands/index.js';
+import { registerHttpCommand,registerMcpCommand,registerUiCommand,registerSetupCommand,registerStatusCommand,registerUpdateCommand } from './commands/index.js';
 import { container } from './container.js';
 
 const program = new Command();
@@ -19,6 +19,8 @@ program
 
 //registrar comandos
 registerSetupCommand(program);
+registerStatusCommand(program);
+registerUpdateCommand(program);
 registerUiCommand(program, container.knowledgeRepository, container.docRepository, container.docChunkRepository);
 registerMcpCommand(program, container.knowledgeRepository, container.docRepository, container.docChunkRepository);
 registerHttpCommand(program, container.knowledgeRepository, container.docRepository, container.docChunkRepository);
