@@ -1,8 +1,12 @@
 import fs from 'node:fs';
+import path from 'node:path';
+import pg from 'pg';
 import type { Command } from 'commander';
 import type { DbEngine } from '../config.js';
 import { CONFIG_DIR, CONFIG_PATH } from '../env.js';
 import { BACK, selectPrompt, textPrompt } from '../infrastructure/console/prompt.js';
+
+const SQLITE_PATH = path.join(CONFIG_DIR, 'knowledge.sqlite');
 
 /**
  * Registers the 'setup' command to the provided Commander program.
@@ -29,42 +33,84 @@ async function runSetup(): Promise<void> {
     values['DB_ENGINE'] = dbEngine;
 
     if (dbEngine === 'sqlite') {
-        const sqlitePath = await textPrompt('Ruta del fichero SQLite:', './data/knowledge.sqlite');
-        if (sqlitePath === BACK) return;
-        values['SQLITE_PATH'] = sqlitePath;
+        values['SQLITE_PATH'] = SQLITE_PATH;
     } else {
-        const host = await textPrompt('Host de Postgres:', 'localhost');
-        if (host === BACK) return;
-        values['POSTGRES_HOST'] = host;
-
-        const port = await textPrompt('Puerto de Postgres:', '5432');
-        if (port === BACK) return;
-        values['POSTGRES_PORT'] = port;
-
-        const user = await textPrompt('Usuario de Postgres:', 'postgres');
-        if (user === BACK) return;
-        values['POSTGRES_USER'] = user;
-
-        const password = await textPrompt('Password de Postgres:', '');
-        if (password === BACK) return;
-        values['POSTGRES_PASSWORD'] = password;
-
-        const database = await textPrompt('Base de datos de Postgres:', 'ragnarok');
-        if (database === BACK) return;
-        values['POSTGRES_DB'] = database;
+        const postgresValues = await promptValidPostgresConfig();
+        if (postgresValues === BACK) return;
+        Object.assign(values, postgresValues);
     }
 
     const ollamaBaseUrl = await textPrompt('URL de Ollama:', 'http://localhost:11434');
     if (ollamaBaseUrl === BACK) return;
     values['OLLAMA_BASE_URL'] = ollamaBaseUrl;
 
-    const ollamaEmbeddingModel = await textPrompt('Modelo de embeddings de Ollama:', 'paraphrase-multilingual');
-    if (ollamaEmbeddingModel === BACK) return;
-    values['OLLAMA_EMBEDDING_MODEL'] = ollamaEmbeddingModel;
-
     writeConfigFile(values);
 
     console.log(`\nConfiguración guardada en ${CONFIG_PATH}`);
+}
+
+async function promptValidPostgresConfig(): Promise<Record<string, string> | typeof BACK> {
+    const defaults = {
+        host: 'localhost',
+        port: '5432',
+        user: 'postgres',
+        password: '',
+        database: 'ragnarok',
+    };
+
+    for (;;) {
+        const host = await textPrompt('Host de Postgres:', defaults.host);
+        if (host === BACK) return BACK;
+
+        const port = await textPrompt('Puerto de Postgres:', defaults.port);
+        if (port === BACK) return BACK;
+
+        const user = await textPrompt('Usuario de Postgres:', defaults.user);
+        if (user === BACK) return BACK;
+
+        const password = await textPrompt('Password de Postgres:', defaults.password);
+        if (password === BACK) return BACK;
+
+        const database = await textPrompt('Base de datos de Postgres:', defaults.database);
+        if (database === BACK) return BACK;
+
+        defaults.host = host;
+        defaults.port = port;
+        defaults.user = user;
+        defaults.password = password;
+        defaults.database = database;
+
+        const error = await testPostgresConnection({ host, port: Number(port), user, password, database });
+        if (!error) {
+            return {
+                POSTGRES_HOST: host,
+                POSTGRES_PORT: port,
+                POSTGRES_USER: user,
+                POSTGRES_PASSWORD: password,
+                POSTGRES_DB: database,
+            };
+        }
+
+        console.log(`\nNo se ha podido conectar a Postgres: ${error}\nInténtalo de nuevo.\n`);
+    }
+}
+
+async function testPostgresConnection(options: {
+    host: string;
+    port: number;
+    user: string;
+    password: string;
+    database: string;
+}): Promise<string | null> {
+    const client = new pg.Client(options);
+    try {
+        await client.connect();
+        return null;
+    } catch (error) {
+        return error instanceof Error ? error.message : String(error);
+    } finally {
+        await client.end().catch(() => undefined);
+    }
 }
 
 function writeConfigFile(values: Record<string, string>): void {
